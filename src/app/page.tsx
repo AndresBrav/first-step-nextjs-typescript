@@ -1,18 +1,32 @@
 import React from 'react'
 
-let title:string = 'Hello world'
+let title: string = 'Hello world'
 
+type Color = "red" | "yellow" | "blue" | "black"
 
-function Button(){
-  return(
-    <button>Click me</button>
+type ButtonProps = {
+  text: string,
+  subtitle?: string,
+  color?: Color,
+  backgroundColor?: Color
+}
+
+function Button(props: ButtonProps) {
+  const { text, color, subtitle } = props
+  return (
+    <button>
+      {text}
+    </button>
   )
 }
 
 const Page = () => {
   return (
     <div>
-      <Button/>
+      <Button
+        text="hello world"
+        backgroundColor='red'
+      />
     </div>
   )
 }
