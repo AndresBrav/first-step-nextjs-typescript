@@ -4,18 +4,20 @@ let title: string = 'Hello world'
 
 type Color = "red" | "yellow" | "blue" | "black"
 
+// type ButtonProps = {
+//   text: string,
+//   subtitle?: string,
+//   color?: Color,
+//   backgroundColor?: Color
+// }
 type ButtonProps = {
-  text: string,
-  subtitle?: string,
-  color?: Color,
-  backgroundColor?: Color
+  children: React.ReactNode; /* any type of element */
 }
 
-function Button(props: ButtonProps) {
-  const { text, color, subtitle } = props
+function Button({ children }: ButtonProps) {
   return (
     <button>
-      {text}
+      test
     </button>
   )
 }
@@ -23,10 +25,11 @@ function Button(props: ButtonProps) {
 const Page = () => {
   return (
     <div>
-      <Button
-        text="hello world"
-        backgroundColor='red'
-      />
+      <Button> 
+        <span>test</span>
+        <div>asdasd</div>
+      </Button>
+      
     </div>
   )
 }
